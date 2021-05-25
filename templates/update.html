@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+Editar pregunta
+{% endblock %}
+{% block content %}
+<h3>Editar Pregunta</h3>
+<form method="post" action="{{ url_for('update') }}">
+  <input type="hidden" id="custId" name="id" value="{{ question.question_id }}">
+	<p><textarea name="question_text" rows="6" cols="100">{{ question.question_text }}</textarea></p>
+  <p><input name="question_option1" type="text" value="{{ question.question_option1 }}" size = 100></p>
+  <p><input name="question_option2" type="text" value="{{ question.question_option2 }}" size = 100></p>
+  <p><input name="question_option3" type="text" value="{{ question.question_option3 }}" size = 100></p>
+  <p><input name="question_option4" type="text" value="{{ question.question_option4 }}" size = 100></p>
+  <p><input name="question_ok" type="text" value="{{ question.question_ok }}"></p>
+	<input type="submit" value="Update">
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}
+Agregar Pregunta
+{% endblock %}
+{% block content %}
+<h3>Ingrese una nueva pregunta multiple choice</h3>
+<div class="form-group">
+<form method="post" action="{{ url_for('add_question') }}">
+	<p>Enunciado: <textarea name="question" rows="6" cols="100"></textarea></p>
+	<p>Opcion 1: <input name="option1" type="text" size="100"></p>
+	<p>Opcion 2: <input name="option2" type="text" size="100"></p>
+	<p>Opcion 3: <input name="option3" type="text" size="100"></p>
+	<p>Opcion 4: <input name="option4" type="text" size="100"></p>
+	<p>Opcion correcta: <input name="correct" type="text"></p>
+	<input type="submit" value="Agregar">
+</form>
+</div>
+
+{% endblock %}

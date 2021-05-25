@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}
+Generar Examen
+{% endblock %}
+{% block content %}
+<h1>Nuevo examen - Ingrese llamado</h1>
+<div class="form-group">
+<form method="post" action="{{ url_for('gen_test') }}">
+	<p><input name="llamado" type="text"></p>
+	<input type="submit" value="Add">
+</form>
+</div>
+
+{% endblock %}

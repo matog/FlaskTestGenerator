@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}
+Mostrar Examen
+{% endblock %}
+{% block content %}
+<h3>Examen del llamado de {{ mes }}</h3>
+
+  <div class="card">
+    {% for pregunta in pregunta %}
+    <div class="card-body">
+        <h5 class="card-title">Pregunta: {{ pregunta.question_text }}</h5>
+        <p class="card-text">Opción 1: {{ pregunta.question_option1 }}</p>
+        <p class="card-text">Opción 2: {{ pregunta.question_option2 }}</p>
+        <p class="card-text">Opción 3: {{ pregunta.question_option3 }}</p>
+        <p class="card-text">Opción 4: {{ pregunta.question_option4 }}</p>
+    </div>
+        {% endfor %}
+    <div>
+      <a href="/test/" class="btn btn-primary">Descargar</a>
+      <a href="/delete/{{test.test_id}}" class="btn btn-primary">Borrar examen</a>
+      <a href="/test/" class="btn btn-primary">Volver al listado</a>
+    </div>
+  </div>
+
+
+{% endblock %}
